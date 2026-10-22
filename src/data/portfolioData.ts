@@ -543,14 +543,7 @@ export const portfolioData: PortfolioData = {
       ]
     }
   ],
-  experience: [
-    {
-      role: "Program Manager",
-      organization: "HAXSORA Traceback",
-      period: "2026",
-      description: "Coordinating cybersecurity program initiatives, community threat intelligence discussions, and technical operational workflows."
-    }
-  ],
+  experience: [],
   education: [
     {
       degree: "BSc (Hons) in Cyber Security & Digital Forensics",

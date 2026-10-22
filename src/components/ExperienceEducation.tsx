@@ -25,7 +25,7 @@ export const ExperienceEducation: React.FC = () => {
             Education &amp; Experience
           </h2>
           <p className="mt-2 text-base text-slate-400 max-w-2xl font-sans font-normal">
-            Verified academic qualifications, technical training credentials, hands-on lab experience, and professional engagement.
+            Verified academic qualifications, technical training credentials, and hands-on lab experience.
           </p>
           <div className="w-12 h-1 bg-accent-purple rounded-full mt-3" />
         </motion.div>
@@ -86,39 +86,41 @@ export const ExperienceEducation: React.FC = () => {
             </div>
 
             {/* Work Experience */}
-            <div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4 px-1">
-                <Briefcase className="w-4 h-4 text-accent-purple" />
-                <span>Work Experience</span>
-              </div>
+            {experience && experience.length > 0 && (
+              <div>
+                <div className="flex items-center gap-2 text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4 px-1">
+                  <Briefcase className="w-4 h-4 text-accent-purple" />
+                  <span>Work Experience</span>
+                </div>
 
-              <div className="space-y-4">
-                {experience.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="card-dark p-6"
-                  >
-                    <div className="flex items-start justify-between gap-4">
-                      <div>
-                        <h3 className="text-base font-heading font-bold text-white">
-                          {item.role}
-                        </h3>
-                        <div className="text-sm font-medium text-accent-purple mt-0.5">
-                          {item.organization}
+                <div className="space-y-4">
+                  {experience.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="card-dark p-6"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <h3 className="text-base font-heading font-bold text-white">
+                            {item.role}
+                          </h3>
+                          <div className="text-sm font-medium text-accent-purple mt-0.5">
+                            {item.organization}
+                          </div>
                         </div>
+                        <span className="px-2.5 py-1 rounded-full bg-midnight-950 text-xs font-mono text-slate-300 border border-surface-border shrink-0">
+                          {item.period}
+                        </span>
                       </div>
-                      <span className="px-2.5 py-1 rounded-full bg-midnight-950 text-xs font-mono text-slate-300 border border-surface-border shrink-0">
-                        {item.period}
-                      </span>
-                    </div>
 
-                    <p className="mt-3 text-sm text-slate-300 leading-relaxed font-sans font-normal">
-                      {item.description}
-                    </p>
-                  </div>
-                ))}
+                      <p className="mt-3 text-sm text-slate-300 leading-relaxed font-sans font-normal">
+                        {item.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
           </div>
 
